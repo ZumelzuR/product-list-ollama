@@ -1,0 +1,21 @@
+{
+  "compilerOptions": {
+    "lib": ["esnext", "dom","es2021"],
+    "target": "esnext",
+    "module": "CommonJS",
+    "esModuleInterop": true,
+    "rootDir": "./src",
+    "moduleResolution": "node",
+    "sourceMap": true,
+    "incremental": true,
+    "resolveJsonModule": true,
+    "outDir": "dist",
+    "types": ["node", "jest"],
+    "skipLibCheck": true,
+    "noFallthroughCasesInSwitch": true,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "forceConsistentCasingInFileNames": true
+  },
+  "include": ["./src/**/*.ts"]
+}

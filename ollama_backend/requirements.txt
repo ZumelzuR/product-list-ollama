@@ -1,0 +1,9 @@
+llama-index
+fastapi
+mongoengine
+pydantic
+uvicorn
+llama-index-llms-ollama
+fastapi
+pyjwt
+python-dotenv

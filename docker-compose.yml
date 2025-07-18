@@ -1,0 +1,37 @@
+version: '3.8'
+services:
+  mongodbex:
+    image: mongo:6.0
+    restart: always
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo-data:/data/db
+
+  backend:
+    build: ./backend
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=development
+      - MONGO_URI=mongodb://mongodbex:27017/test
+      - SEED_ON_START=true
+    depends_on:
+      - mongodbex
+
+  frontend:
+    build: ./frontend
+    ports:
+      - "8080:80"
+    depends_on:
+      - backend
+      # - ollama_backend
+
+  # ollama_backend:
+  #   build: ./ollama-backend
+  #   ports:
+  #     - "3001:3001"
+  
+
+volumes:
+  mongo-data:

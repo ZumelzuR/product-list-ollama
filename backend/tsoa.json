@@ -1,0 +1,27 @@
+{
+  "entryFile": "src/index.ts",
+  "noImplicitAdditionalProperties": "throw-on-extras",
+  "controllerPathGlobs": ["src/**/*controller.ts"],
+  "routes": {
+    "noWriteIfUnchanged": true,
+    "routesDir": "src/routes",
+    "authenticationModule": "src/authentication.ts",
+    "basePath": "/api/v1"
+  },
+  "spec": {
+    "name": "Api CSM bot",
+    "description": "api cms",
+    "basePath": "/api/v1",
+    "outputDirectory": "src/schemas",
+    "specVersion": 3,
+    "securityDefinitions": {
+      "jwt": {
+        "type": "http",
+        "name": "Authorization",
+        "in": "header",
+        "scheme": "bearer",
+        "bearerFormat": "JWT"
+      }
+    }
+  }
+}
